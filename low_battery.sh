@@ -15,6 +15,6 @@ function notify {
 
 while true
 do
-    notify 82 
+    notify 15 
     sleep 5s
 done
