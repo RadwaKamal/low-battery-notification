@@ -15,6 +15,13 @@ function notify {
 
 while true
 do
-    notify 15 
-    sleep 5s
+    battery_state=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'state'`
+    state=`echo ${battery_state#*:}`
+    echo $state
+    if [ "$state" == "discharging" ]
+        then
+        notify 90 
+        sleep 5s
+    fi
+sleep 5s
 done
